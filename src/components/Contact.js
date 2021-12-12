@@ -2,7 +2,10 @@
 const Contact = () => {
     return ( 
         <div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis vel est soluta ipsa consectetur fuga corrupti illum possimus temporibus accusantium id, sed excepturi iure nostrum sint? Dolor veritatis esse doloribus?</p>
+            <h1>聯繫方式</h1>
+            <p>地址: 台北市信義區祥雲街陽台</p>
+            <p>電話： -</p>
+            <p>電子郵件： -</p>
         </div>
      );
 }

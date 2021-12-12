@@ -1,3 +1,11 @@
+.navbar{
+    position:sticky;
+    top: 0;
+    z-index: 2;
+    background-color: rgb(128, 127, 127);
+    border-radius: 5px;
+}
+
 .avatar{
     height: 150px;
     width: 150px;
@@ -17,15 +25,22 @@
 .header{
     display:flex;
     justify-content: flex-end;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 .header a{
     text-decoration: none;
     padding: 10px 30px 10px 30px;
-    border-left: 1px solid grey;
+    border-left: 1px solid #d4d4d4;
     font-size: 22px;
+    color: rgb(198, 197, 199);
+
 }
 
 .header a:hover{
-    background-color: indigo;
+    background-color: rgb(94, 93, 93);
+}
+
+.header a:last-of-type{
+    border-top-right-radius: 5px;
 }

@@ -10,10 +10,19 @@ import Videos from './components/Videos';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Contact from './components/Contact';
+import { useState } from 'react';
 
 
 
 function App() {
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  const addBlogPost = (post) => {
+    setBlogPosts(prevBlogPosts => {
+      return [...prevBlogPosts, post]
+    })
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -34,7 +43,7 @@ function App() {
           </Route>
 
           <Route path="/blogs">
-            <Blogs />
+            <Blogs blogPosts={blogPosts} addBlogPost={addBlogPost}/>
           </Route>
 
           <Route path="/contact">
