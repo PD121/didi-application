@@ -1,0 +1,43 @@
+.btn-wrapper{
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+.return-btn {
+  background-color: rgb(97, 97, 97);
+  color: rgb(198, 197, 199);
+  padding: 10px 40px;
+  margin: 35px 0 5px 0;
+  border: 1px solid rgb(198, 197, 199);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+.return-btn:hover {
+  color: rgb(241, 240, 240);
+  border: 1px solid rgb(241, 240, 240);
+}
+
+.delete-btn {
+  background-color: rgb(97, 97, 97);
+  color: rgb(198, 197, 199);
+  padding: 10px 40px;
+  margin: 35px 0 5px auto;
+  border: 1px solid rgb(198, 197, 199);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+.delete-btn:hover {
+  color: rgb(241, 240, 240);
+  border: 1px solid rgb(241, 240, 240);
+}
+
+
+

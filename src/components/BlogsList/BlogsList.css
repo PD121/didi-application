@@ -1,0 +1,15 @@
+.blog-card-wrapper {
+    text-decoration: none;
+    color: inherit
+}
+
+.blog-card{
+    background-color:rgb(148, 148, 148);
+    padding: 10px;
+    margin: 30px;
+    border-radius: 5px;
+}
+
+.blog-card:hover{
+    transform: rotateZ(3deg);
+}

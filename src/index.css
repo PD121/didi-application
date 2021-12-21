@@ -1,8 +1,17 @@
-/* FONTS */
+/* FONT IMOPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+TC:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Sans+TC:wght@100;400;700&display=swap');
+
+
+
+* {
+  margin: 0;
+  
+}
+
 
 html{
-  margin: 0 100px 0 100px;
+  margin: 0% 10%;
   background-color: rgb(37, 37, 37);
 }
 
@@ -10,12 +19,10 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(121, 121, 121);
-  border-radius: 8px;
+  background-color: rgb(97, 97, 97);
+  /*border-radius: 8px;*/
   position: relative;
-  border: 1px solid #f1f1f1;
+  /*border: 1px solid #f1f1f1;*/
   color: rgb(198, 197, 199);
-
-
 }
 

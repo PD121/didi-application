@@ -1,32 +1,33 @@
+/* STYLES */
 import './App.css';
-import Cover from './components/Cover';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Blogs from './components/Blogs';
-import Images from './components/Images';
-import Videos from './components/Videos';
+
+/* PAGES */
+import Home from './pages/Home/Home';
+import Blogs from './pages/Blogs/Blogs';
+import Images from './pages/Images/Images';
+import Videos from './pages/Videos/Videos';
+import Contact from './pages/Contact/Contact';
+import BlogDetails from './pages/BlogDetails/BlogDetails';
+import AddBlog from './pages/AddBlog/AddBlog';
 
 
-import Navbar from './components/Navbar';
+
+/* COMPONENTS */
+import Cover from './components/Cover/Cover';
+import Footer from './components/Footer/Footer';
+
+/* OTHER */
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Contact from './components/Contact';
-import { useState } from 'react';
+import Redirect from './components/Redirect/Redirect';
 
 
 
 function App() {
-  const [blogPosts, setBlogPosts] = useState([]);
-
-  const addBlogPost = (post) => {
-    setBlogPosts(prevBlogPosts => {
-      return [...prevBlogPosts, post]
-    })
-  }
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        
         <Cover />
 
         <Switch>
@@ -42,12 +43,24 @@ function App() {
             <Videos />
           </Route>
 
-          <Route path="/blogs">
-            <Blogs blogPosts={blogPosts} addBlogPost={addBlogPost}/>
+          <Route exact path="/blogs">
+            <Blogs />
+          </Route>
+
+          <Route path="/blogs/:id">
+            <BlogDetails />
+          </Route>
+
+          <Route path="/addblog">
+            <AddBlog />
           </Route>
 
           <Route path="/contact">
             <Contact />
+          </Route>
+
+          <Route path="*">
+            <Redirect />
           </Route>
         </Switch>
 

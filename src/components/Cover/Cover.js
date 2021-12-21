@@ -1,7 +1,7 @@
-import './Navbar.css';
+import './Cover.css'
 import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Cover = () => {
     return ( 
         <div className="navbar">
             <img src="/img/avatar2.png" alt=''className="avatar"/>
@@ -14,7 +14,10 @@ const Navbar = () => {
                 <NavLink to="/contact">聯繫方式</NavLink>
             </header>
         </div>
+       /*  <div className="cover">
+            <img src="/img/cover.jpg" alt=''/>
+        </div> */
      );
 }
  
-export default Navbar;
+export default Cover;

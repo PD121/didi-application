@@ -1,0 +1,9 @@
+
+
+.add-blog-wrapper form label, .add-blog-wrapper form input, .add-blog-wrapper form textarea {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
