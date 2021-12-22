@@ -19,6 +19,8 @@ import Footer from './components/Footer/Footer';
 /* OTHER */
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Redirect from './components/Redirect/Redirect';
+import Signup from './pages/Signup/Signup';
+import Login from './pages/Login/Login';
 
 
 
@@ -57,6 +59,14 @@ function App() {
 
           <Route path="/contact">
             <Contact />
+          </Route>
+
+          <Route path="/signup">
+            <Signup />
+          </Route>
+
+          <Route path="/login">
+            <Login />
           </Route>
 
           <Route path="*">
