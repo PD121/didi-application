@@ -1,0 +1,43 @@
+.add-img-wrapper {
+    border: 1px solid #c2c1c1;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    background-color: rgb(148, 148, 148);
+}
+
+
+#submit-img-btn {
+    margin-top: 10px;
+   
+}
+
+#submit-img-btn-disabled {
+    margin-top: 10px;
+    background-color: rgb(97, 97, 97);
+    color: rgb(198, 197, 199);
+    border: 1px solid rgb(198, 197, 199);
+    border-radius: 5px;
+    font-size: 20px;
+    cursor:initial;
+}
+
+
+#upload-img-file {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    text-align:right;
+    width:min-content;
+    padding-left: 80px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.add-img-wrapper h3 {
+    font-size: 20px;
+}

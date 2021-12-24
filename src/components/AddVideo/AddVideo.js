@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom"
+import { useState } from "react";
 
 import { projectFirestore } from '../../firebase/config'
 import { projectStorage } from '../../firebase/config'
+
+import './AddVideo.css'
 
 
 
 const AddVideo = () => {
   const [video, setVideo] = useState(null);
-  const [videoError, setVideoError] = useState(null)
-
-
-  const history = useHistory()
+  const [videoError, setVideoError] = useState('請選想要上傳的影片')
 
 
 
@@ -22,22 +20,21 @@ const AddVideo = () => {
       let selected = e.target.files[0]
       console.log(selected)
   
-/*       if (!selected) {
-        setVideoError('Please select a file')
+       if (!selected) {
+        setVideoError('請選想要上傳的影片')
         return
       }
       if (!selected.type.includes('video')) {
-        setVideoError('Selected file must be a video')
+        setVideoError('上傳的檔案必須得是.MP4影片')
         return
       }
-      if (selected.size > 10000000000) {
-        setVideoError('Video file size must be less than 100kb')
+      if (selected.size > 3000000) {
+        setVideoError('上傳照片檔案的大小不能超過3MB')
         return
-      } */
+      }
       
       setVideoError(null)
       setVideo(selected)
-      console.log('thumbnail updated')
 
     }
     // End image input
@@ -63,13 +60,17 @@ const AddVideo = () => {
       }
   }
     return ( 
-        <div className="add-blog-wrapper">
+        <div className="add-video-wrapper">
             <div>
+              <h3>上傳影片</h3>
                 <form onSubmit={submitForm}>
                     <label>
-                        <input type="file" onChange={handleFileChange}/>
+                        <input type="file" onChange={handleFileChange} id="upload-vid-file"/>
                     </label>
-                    <button type="submit">Submit</button>
+                    {video && !videoError && <button type="submit" className="btn" id="submit-vid-btn">上傳</button>}
+                    {videoError && video && <button type="submit" className="btn" id="submit-vid-btn-disabled" disabled>上傳</button>}
+                    {!video && <button type="submit" className="btn" id="submit-vid-btn-disabled" disabled>上傳</button>}
+                    {videoError && <p className="add-video-error">{videoError}</p>}
                 </form>
             </div>
         </div>

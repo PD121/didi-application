@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom"
 
 import { projectFirestore } from '../../firebase/config'
@@ -13,17 +13,10 @@ const AddBlog = () => {
     const [date, setDate] = useState("");
     const [body, setBody] = useState("");
     const [image, setImage] = useState(null);
-    const [imageError, setImageError] = useState(null)
+    const [imageError, setImageError] = useState('請選想要上傳的相片或gif')
 
 
     const history = useHistory()
-
-
-    const resetForm = () => {
-        setTitle("")
-        setDate("")
-        setBody("")
-    }
 
 
     // image input
@@ -32,23 +25,23 @@ const AddBlog = () => {
         setImage(null)
         let selected = e.target.files[0]
         console.log(selected)
+        
     
         if (!selected) {
-          setImageError('Please select a file')
+          setImageError('請選想要上傳的相片或gif')
           return
         }
         if (!selected.type.includes('image')) {
-          setImageError('Selected file must be an image')
+          setImageError('上傳的檔案必須得是照片或gif')
           return
         }
-        if (selected.size > 100000000) {
-          setImageError('Image file size must be less than 100kb')
+        if (selected.size > 600000) {
+          setImageError('上傳照片檔案的大小不能超過600kb')
           return
         }
         
         setImageError(null)
         setImage(selected)
-        console.log('thumbnail updated')
 
       }
       // End image input
@@ -83,22 +76,25 @@ const AddBlog = () => {
                 <form onSubmit={submitForm}>
                     <label>
                         <span>標題</span>
-                        <input type="text" onChange={(e) => setTitle(e.target.value)} value={title}/>
+                        <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} className="text-input"/>
                     </label>
                     <label>
                         <span>日期</span>
-                        <input type="date" onChange={(e) => setDate(e.target.value)} value={date}/>
+                        <input type="date" onChange={(e) => setDate(e.target.value)} value={date} className="text-input"/>
                     </label>
                     <label>
                         <span>主體</span>
-                        <textarea rows="10" onChange={(e) => setBody(e.target.value)} value={body}></textarea>
+                        <textarea rows="15" onChange={(e) => setBody(e.target.value)} value={body} className="text-input"></textarea>
                     </label>
 
                     <label>
-                        <input type="file" accept="image/*" onChange={handleFileChange}/>
+                        <input type="file" accept="image/*" onChange={handleFileChange} id="file-upload-input-blog"/>
                     </label>
 
-                    <button type="submit">Submit</button>
+                    {image && !imageError && <button type="submit" className="submit-blog-btn">提交</button>}
+                    {imageError && image && <button type="submit" className="submit-blog-btn-disabled" disabled>提交</button>}
+                    {!image && <button type="submit" className="submit-blog-btn-disabled" disabled>提交</button>}
+                    {imageError && <p className="image-error">{imageError}</p>}
                 </form>
             </div>
         </div>

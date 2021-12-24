@@ -1,13 +1,17 @@
 import AddImage from "../../components/AddImage/AddImage";
 
-import BlogsList from "../../components/BlogsList/BlogsList";
-//import useFetch from "../../hooks/useFetch";
-import { Link } from "react-router-dom"
 
 import { projectFirestore } from '../../firebase/config'
 import { useState, useEffect } from "react";
 
 import "./Images.css"
+
+import Trashcan from "../../assets/trashcan.svg"
+
+import { useAuthContext } from "../../hooks/useAuthContext"
+
+
+
 
 
 
@@ -16,6 +20,10 @@ const Images = () => {
         const [data, setData] = useState(null);
         const [isPending, setIsPending] = useState(false);
         const [error, setError] = useState(false)
+
+        const { user } = useAuthContext();
+
+        
     
         useEffect(() => {
             setIsPending(true)
@@ -40,14 +48,19 @@ const Images = () => {
             return () => unsub
         }, [])
 
+        const handleDelete = (id) => {
+            projectFirestore.collection("images").doc(id).delete()
+        }
+
     return ( 
-        <div>
-            <h2>Images</h2>
+        <div className="image-page-wrapper">
+            <h1>照片</h1>
             <AddImage />
             <div className="images-container">
                 {data && data.map(image => (
-                    <div>
-                        {image && <img src={image.url} alt="" />}
+                    <div className="image-wrapper" key={image.id}>
+                        {image && user && <img src={Trashcan} alt="" className="delete-icon" onClick={() => handleDelete(image.id)}/>}
+                        {image && <img src={image.url} alt="" className="image" />}
                     </div>
                 ))}
             </div>

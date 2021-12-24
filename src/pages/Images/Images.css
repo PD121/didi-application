@@ -1,8 +1,35 @@
-.images-container {
-    display: flex;
+.image-page-wrapper h1 {
+    margin-top: 60px;
+    margin-bottom: 30px;
 }
 
-.images-container img {
-    max-width: 300px;
-    max-height: 300px;
+.images-container {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-wrapper {
+    height: 70vh;
+    flex-grow: 1;
+    position: relative;
+}
+
+.images-container .image {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.images-container .delete-icon {
+    position: absolute;
+    right: 0;
+    display: none;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.image-wrapper:hover .delete-icon{
+    display:inline;
 }

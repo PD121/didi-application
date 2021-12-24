@@ -13,3 +13,7 @@
 .blog-card:hover{
     transform: rotateZ(3deg);
 }
+
+.blog-card p:last-of-type {
+    text-decoration: underline;
+}

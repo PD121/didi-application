@@ -1,3 +1,11 @@
+.blog-page-wrapper > h1 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+#add-blog-btn{
+    margin-bottom: 40px;
+}
 
 .blog-prevs-ctn{
     display: grid;

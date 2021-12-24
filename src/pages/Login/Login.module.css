@@ -1,11 +1,12 @@
 .login-form {
     max-width: 360px;
-    margin: 60px auto;
+    margin: 40px auto;
     padding: 20px;
   }
   .login-form label {
     display: block;
     margin: 30px auto;
+    position: relative;
   }
   .login-form span {
     display: block;
@@ -16,4 +17,6 @@
     font-size: 1em;
     color: #777;
     width: 100%;
+    margin: auto;
+    box-sizing: border-box;
   }

@@ -1,0 +1,12 @@
+.contacts {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.contact-page-container p {
+    padding: 20px;
+}
+
+.contact-page-container p:last-of-type {
+    margin-bottom: 40px
+}

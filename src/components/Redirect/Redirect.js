@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom"
 
+import "./Redirect.css"
+
 const Redirect = () => {
     const history = useHistory()
     
@@ -11,9 +13,9 @@ const Redirect = () => {
     }, [history])
 
     return ( 
-        <div>
-            <h2>This page does not exist.</h2>
-            <h2>You will be redirected to the home page...</h2>
+        <div className="redirect-container">
+            <h1>此網頁不存在</h1>
+            <h2>您將被重定向到主頁...</h2>
 
         </div>
      );

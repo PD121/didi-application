@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 import { projectFirestore } from '../../firebase/config'
 import { useState, useEffect } from "react";
 
+import { useAuthContext } from "../../hooks/useAuthContext"
+
 
 
 const Blogs = () => {
@@ -13,6 +15,7 @@ const Blogs = () => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(false);
     const [error, setError] = useState(false)
+    const { user } = useAuthContext();
 
     useEffect(() => {
         setIsPending(true)
@@ -38,10 +41,13 @@ const Blogs = () => {
     }, [])
     
     return ( 
-        <div>
-            <Link to="/addblog">
-                <button className="btn">新文章</button>
-            </Link>
+        <div className="blog-page-wrapper">
+            <h1>部落格</h1>
+            {user && (
+                <Link to="/addblog">
+                    <button className="btn" id="add-blog-btn">新文章</button>
+                </Link>
+            )}
 
             {isPending && <p>Loading blog posts...</p>}
             {error && <p>{error}</p>}

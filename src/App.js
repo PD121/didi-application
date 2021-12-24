@@ -22,12 +22,16 @@ import Redirect from './components/Redirect/Redirect';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 
+import { useAuthContext } from './hooks/useAuthContext'
+
 
 
 function App() {
+  const { authIsReady } = useAuthContext()
 
   return (
     <div className="App">
+      {authIsReady && (
       <BrowserRouter>
         
         <Cover />
@@ -65,7 +69,7 @@ function App() {
             <Signup />
           </Route>
 
-          <Route path="/login">
+          <Route path="/admin">
             <Login />
           </Route>
 
@@ -76,6 +80,7 @@ function App() {
 
         <Footer />
       </BrowserRouter>
+      )}
     </div>
   );
 }

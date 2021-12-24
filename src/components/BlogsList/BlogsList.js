@@ -11,8 +11,8 @@ const BlogsList = ({ blogPosts }) => {
                     <div className="blog-card">
                             <h2>{blogPost.title}</h2>
                             <p>{blogPost.date}</p>
-                            <p>{blogPost.body.slice(0,100)}</p>
-                            <p>Read more...</p>
+                            <p>{blogPost.body.slice(0,50)}...</p>
+                            <p>閱讀更多...</p>
                     </div>
                 </Link>
                 ))}

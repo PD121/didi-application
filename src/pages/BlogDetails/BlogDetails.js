@@ -1,85 +1,94 @@
-
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { useState, useEffect } from "react"
-import "./BlogDetails.css"
+import { useState, useEffect } from "react";
+import "./BlogDetails.css";
 
-import { projectFirestore } from '../../firebase/config'
+import { projectFirestore } from "../../firebase/config";
 import Modal from "../../components/Modal/Modal";
 
-
-
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const BlogDetails = () => {
-    const [data, setData] = useState(null);
-    const [isPending, setIsPending] = useState(false);
-    const [error, setError] = useState(false)
+  const [data, setData] = useState(null);
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState(false);
 
-    const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
-    const { id } = useParams()
-   // const { data: blogPost, isPending, error } = useFetch("http://localhost:3000/blogs/" + id)
-    const history = useHistory()
+  const { id } = useParams();
+  // const { data: blogPost, isPending, error } = useFetch("http://localhost:3000/blogs/" + id)
+  const history = useHistory();
+  const { user } = useAuthContext();
 
-    useEffect(() => {
-        setIsPending(true)
+  useEffect(() => {
+    setIsPending(true);
 
-        projectFirestore.collection("blogposts").doc(id).get().then((doc) => {
-            if (doc.exists) {
-                setIsPending(false)
-                setData(doc.data())
-            } else {
-                setIsPending(false)
-                setError("Could not find that blog post")
-            }
-        })
-
-    }, [id])
-
-    useEffect(() => {
-        if(error){
-            setTimeout(() => {
-                history.push("/blogs")
-            }, 5000);
+    projectFirestore
+      .collection("blogposts")
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setIsPending(false);
+          setData(doc.data());
+        } else {
+          setIsPending(false);
+          setError("此文章不存在");
         }
-    }, [error, history])
+      });
+  }, [id]);
 
-    const handleGoBack = () => {
-        history.push("/blogs")
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        history.push("/blogs");
+      }, 5000);
     }
+  }, [error, history]);
 
-    const handleDelete = () => {
-        projectFirestore.collection("blogposts").doc(id).delete()
-        handleGoBack()
-    }
+  const handleGoBack = () => {
+    history.push("/blogs");
+  };
 
-    const handleModal = () => {
-        setShowModal(!showModal)
-    }
+  const handleDelete = () => {
+    projectFirestore.collection("blogposts").doc(id).delete();
+    handleGoBack();
+  };
 
-    return (  
-        <div>
-            <div className="btn-wrapper">
-                <button className="return-btn" onClick={handleGoBack}>Go back</button>
-                <button className="delete-btn" onClick={handleModal}>Delete Blog</button>
-                <button className="edit-btn">Edit Blog</button>
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
 
-            </div>
+  return (
+    <div>
+      <div className="btn-wrapper">
+        <button className="return-btn" onClick={handleGoBack}>
+          返回
+        </button>
+        {user && (
+          <button className="delete-btn" onClick={handleModal}>
+            刪除文章
+          </button>
+        )}
+      </div>
 
-            {isPending && <p>Loading blog post...</p>}
-            {error && <p>{error}</p>}
+      {isPending && <p>Loading blog post...</p>}
+      {error && <h3 className="error-message">{error}</h3>}
 
-            {data && <div>
-                <h2>{data.title}</h2>
-                <p>{data.date}</p>
-                <p>{data.body}</p>
-                <img src={data.image} alt="" />
-            </div>}
-
-            {showModal && <Modal handleModal={handleModal} handleDelete={handleDelete} />}
-
+      {data && (
+        <div className="blog-details-wrapper">
+          <h2 className="blog-details-title">{data.title}</h2>
+          <p className="blog-details-date">{data.date}</p>
+          <p className="blog-details-body">{data.body}</p>
+          <img src={data.image} alt="" className="blog-details-img" />
         </div>
-    );
-}
- 
+      )}
+
+      {showModal && (
+        <Modal handleModal={handleModal} handleDelete={handleDelete} />
+      )}
+    </div>
+  );
+};
+
 export default BlogDetails;

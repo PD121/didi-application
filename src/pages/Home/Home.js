@@ -4,10 +4,27 @@ const Home = () => {
         <div className="home">
             <h3>你好！ 我是DiDi，我姓陳</h3>
             <h3>歡迎來到我唯一正式的網站</h3>
-            <h2>我的故事</h2>
-            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. In magnam ullam temporibus inventore recusandae sint dicta ipsam modi, nesciunt porro maxime debitis distinctio nemo facilis quo placeat molestias voluptas error illum at nobis est autem voluptatibus. Perferendis amet nulla officiis, repellendus qui debitis consectetur dicta deserunt corporis similique inventore voluptates accusantium nesciunt nisi aliquam dolore! Ex debitis repudiandae sequi ad doloribus architecto beatae quidem. Recusandae fugit suscipit eaque reprehenderit iure ipsum molestiae pariatur consequatur vero! Nam velit ullam saepe, inventore placeat obcaecati labore minus ea, reiciendis possimus sequi, numquam sed illo exercitationem beatae. Eum, minus at. Quam aliquam dicta possimus, dolor earum illo asperiores, harum itaque officiis cum error fugit odio, sed blanditiis accusantium. Officiis accusamus iste excepturi minus fugit quam quod molestias beatae illo explicabo. Voluptatibus quos unde cum incidunt hic, consectetur repellat natus illo? Laudantium, quasi optio quam nulla rem est asperiores beatae ipsam quos amet ratione laborum, debitis aperiam eveniet earum, dolorem ad. Doloribus nostrum, sed delectus adipisci porro consequatur fuga, vitae et, corrupti nam dolorum hic! Voluptatem adipisci perferendis similique quo cumque voluptas, impedit architecto iure alias consequuntur, enim ratione? Alias cupiditate eius officia sapiente in sit iure architecto animi voluptatibus ipsam, voluptatum ipsum inventore natus totam necessitatibus consectetur ea eum molestiae exercitationem. Aperiam nostrum commodi, reprehenderit corrupti sequi consectetur itaque. Architecto dolorem, temporibus corrupti, error natus eaque nihil in, iste consequatur adipisci qui fugiat magnam neque facere esse similique nobis iusto consectetur maiores sunt earum nisi laudantium assumenda! Dolores rerum itaque aliquam, quibusdam laudantium corrupti, dignissimos asperiores consequuntur, aliquid cumque assumenda delectus voluptatem a optio perferendis necessitatibus. Totam sint voluptates unde voluptatem labore eaque amet? Ea odit iure placeat, quam recusandae deleniti, quasi voluptatum consequatur debitis ad vitae cupiditate! </p>
-            <h2>關鍵事實</h2>
-            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. In magnam ullam temporibus inventore recusandae sint dicta ipsam modi, nesciunt porro maxime debitis distinctio nemo facilis quo placeat molestias voluptas error illum at nobis est autem voluptatibus. Perferendis amet nulla officiis, repellendus qui debitis consectetur dicta deserunt corporis similique inventore voluptates accusantium nesciunt nisi aliquam dolore! Ex debitis repudiandae sequi ad doloribus architecto beatae quidem. Recusandae fugit suscipit eaque reprehenderit iure ipsum molestiae pariatur consequatur vero! Nam velit ullam saepe, inventore placeat obcaecati labore minus ea, reiciendis possimus sequi, numquam sed illo exercitationem beatae. Eum, minus at. Quam aliquam dicta possimus, dolor earum illo asperiores, harum itaque officiis cum error fugit odio, sed blanditiis accusantium. Officiis accusamus iste excepturi minus fugit quam quod molestias beatae illo explicabo. Voluptatibus quos unde cum incidunt hic, consectetur repellat natus illo? Laudantium, quasi optio quam nulla rem est asperiores beatae ipsam quos amet ratione laborum, debitis aperiam eveniet earum, dolorem ad. Doloribus nostrum, sed delectus adipisci porro consequatur fuga, vitae et, corrupti nam dolorum hic! Voluptatem adipisci perferendis similique quo cumque voluptas, impedit architecto iure alias consequuntur, enim ratione? Alias cupiditate eius officia sapiente in sit iure architecto animi voluptatibus ipsam, voluptatum ipsum inventore natus totam necessitatibus consectetur ea eum molestiae exercitationem. Aperiam nostrum commodi, reprehenderit corrupti sequi consectetur itaque. Architecto dolorem, temporibus corrupti, error natus eaque nihil in, iste consequatur adipisci qui fugiat magnam neque facere esse similique nobis iusto consectetur maiores sunt earum nisi laudantium assumenda! Dolores rerum itaque aliquam, quibusdam laudantium corrupti, dignissimos asperiores consequuntur, aliquid cumque assumenda delectus voluptatem a optio perferendis necessitatibus. Totam sint voluptates unde voluptatem labore eaque amet? Ea odit iure placeat, quam recusandae deleniti, quasi voluptatum consequatur debitis ad vitae cupiditate! </p>
+            <h1>我的故事</h1>
+            <p>我二零零六年在台北台灣出生的。我沒有上學因為不喜歡看書。上班的話，我負責保護家人，吃東西，還有睡覺。整天做這些任務讓累得跟狗一樣。這一輩子我沒有交過女朋友，不夠人人都說我很可愛。哇哇。下班之後 我 做休閒活動，享受生活。我最愛在我們家樓上的陽台上曬太陽，看台北一零一大樓。年輕的時候 我也每天都去公園散步，跟其他狗玩耍。但老了以後，我沒有之前那麼多力氣了，所以覺得在家裡休息最舒服。我喜歡吃東西，可是因為保護身體健康，所以不會吃太多。除了天天都吃飼料以外，我覺得我主人給我的雞肉特別好吃。雖然我很勇敢，不怕人也不怕長得比我大的狗，也有我害怕，討厭的事。譬如，我不喜歡玩水 洗澡。有一點臭味沒關係。我討厭人抓我的耳朵 尾巴，碰鼻子，壓身體。請大家不要做這些 好不好</p>
+            <h1>關鍵事實</h1>
+            <div className='table'>
+                <div>姓名</div>
+                <div>陳DiDi</div>
+                <div>年齡</div>
+                <div>15歲</div>
+                <div>顏色</div>
+                <div>白</div>
+                <div>國籍</div>
+                <div>臺灣</div>
+                <div>兄弟姐妹</div>
+                <div>不曉得 :-(</div>
+                <div>婚姻狀況</div>
+                <div>未婚</div>
+                <div>愛好</div>
+                <div>睡覺，吃飯</div>
+                <div>語言能力</div>
+                <div>國語，台語</div>
+            </div>
         </div>
      );
 }

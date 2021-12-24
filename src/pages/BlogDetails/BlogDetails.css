@@ -1,7 +1,7 @@
 .btn-wrapper{
     display: flex;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 100px;
+    margin-right: 100px;
     
 }
 
@@ -39,5 +39,31 @@
   border: 1px solid rgb(241, 240, 240);
 }
 
+.blog-details-wrapper {
+  padding: 30px 100px 100px 100px;
+  line-height: 1.5em;
+}
+
+.blog-details-title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.blog-details-date {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.blog-details-body {
+  text-align: justify
+}
+
+.blog-details-img {
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  max-width: 80%;
+}
 
 
