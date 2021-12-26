@@ -1,7 +1,12 @@
+.blog-details-page {
+  padding: 30px 100px 100px 100px;
+}
+
 .btn-wrapper{
     display: flex;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 0px;
+    margin-right: 0px;
+    justify-content:space-between
     
 }
 
@@ -26,7 +31,7 @@
   background-color: rgb(97, 97, 97);
   color: rgb(198, 197, 199);
   padding: 10px 40px;
-  margin: 35px 0 5px auto;
+  margin: 35px 0 5px 0;
   border: 1px solid rgb(198, 197, 199);
   border-radius: 5px;
   cursor: pointer;
@@ -40,7 +45,6 @@
 }
 
 .blog-details-wrapper {
-  padding: 30px 100px 100px 100px;
   line-height: 1.5em;
 }
 
@@ -66,4 +70,19 @@
   max-width: 80%;
 }
 
+@media only screen and (max-width: 650px) {
+  .blog-details-page {
+    padding: 30px 20px 20px 30px !important;
+  }
+  .return-btn, .delete-btn {
+    font-size: 1em !important;
+    padding: 5px 10px !important;
+  }
+}
 
+
+@media only screen and (max-width: 560px) {
+  .blog-details-page * {
+      font-size: 2rem !important;
+  }
+}

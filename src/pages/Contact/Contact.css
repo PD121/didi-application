@@ -10,3 +10,12 @@
 .contact-page-container p:last-of-type {
     margin-bottom: 40px
 }
+
+@media only screen and (max-width: 560px) {
+    .contact-page-container * {
+        font-size: 2.5rem
+    }
+    .contact-page-container h1 {
+        font-size: 4rem !important;
+    }
+  }

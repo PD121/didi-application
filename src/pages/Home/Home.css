@@ -16,9 +16,35 @@
 .table {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: max-content;
 }
 
 .table div {
     text-align: center;
     border: 1px solid rgb(145, 145, 145);
+    height: fit-content;
+    padding: 5px;
 }
+
+
+@media only screen and (max-width: 560px) {
+    .home {
+        padding: 30px 20px 30px 20px !important;
+        line-height: 2.5em
+    }
+  
+  }
+
+  @media only screen and (max-width: 560px) {
+    .home * {
+        font-size: 2rem;
+    }
+
+    .home h1 {
+        font-size: 4rem;
+    }
+
+    .home h3 {
+        font-size: 3rem;
+    }
+  }

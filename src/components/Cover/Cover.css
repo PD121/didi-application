@@ -52,6 +52,7 @@
   /*border-left: 1px solid #d4d4d4;*/
   font-size: 22px;
   color: rgba(198, 197, 199, 1);
+  z-index: 2;
 }
 
 .header a:hover {
@@ -71,3 +72,34 @@
   color: rgb(241, 240, 240) !important;
 }
 
+
+
+@media only screen and (max-width: 1000px) {
+  .avatar {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 760px) {
+  .header{
+    justify-content: space-evenly;
+  }
+  .tab {
+    writing-mode: vertical-rl;
+  }
+}
+
+
+@media only screen and (max-width: 560px) {
+  html {
+    font-size: 0.5em;
+  }
+  .tab {
+    font-size: 3em !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+
+  }
+
+}

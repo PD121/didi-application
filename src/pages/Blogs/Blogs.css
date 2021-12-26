@@ -12,3 +12,12 @@
     grid-template-columns: 1fr 1fr;
     padding: 0px 30px 30px 30px;
 }
+
+@media only screen and (max-width: 560px) {
+    .blog-prevs-ctn {
+        grid-template-columns: 1fr !important;
+    }
+    .blog-page-wrapper > h1 {
+       font-size: 4rem;
+    }
+  }

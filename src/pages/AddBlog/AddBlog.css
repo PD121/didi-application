@@ -58,3 +58,24 @@
 #file-upload-input-blog {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 560px) {
+  .add-blog-wrapper form label,
+  .add-blog-wrapper form input,
+  .add-blog-wrapper form textarea {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+}
+}
+
+
+@media only screen and (max-width: 560px) {
+  .add-blog-wrapper * {
+      font-size: 2rem !important;
+  }
+
+  .add-blog-wrapper > div > h2 {
+    font-size: 3rem !important;
+  }
+}

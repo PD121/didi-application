@@ -13,6 +13,7 @@
     height: 70vh;
     flex-grow: 1;
     position: relative;
+    max-width: 80vw;
 }
 
 .images-container .image {
@@ -33,3 +34,36 @@
 .image-wrapper:hover .delete-icon{
     display:inline;
 }
+
+
+@media only screen and (max-width: 870px) {
+    .image-wrapper {
+      height: 50vh !important;
+  }
+  .images-container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    justify-content: center !important;
+}
+  }
+
+
+  @media only screen and (max-width: 560px) {
+    .image-wrapper {
+      height: 30vh !important;
+  }
+  .images-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    justify-content: center !important;
+}
+  }
+
+  @media only screen and (max-width: 560px) {
+    .image-page-wrapper h1 {
+      font-size: 4rem !important;
+    }
+  }
+
+
+ 

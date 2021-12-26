@@ -36,3 +36,16 @@
     position: absolute;
 
 }
+
+
+@media only screen and (max-width: 560px) {
+    .videos-container {
+      padding: 10px !important;
+  }
+  }
+
+  @media only screen and (max-width: 560px) {
+    .video-page-wrapper h1 {
+      font-size: 4rem !important;
+    }
+  }

@@ -24,6 +24,7 @@ body {
   position: relative;
   /*border: 1px solid #f1f1f1;*/
   color: rgb(198, 197, 199);
+  max-width: 1500px;
 }
 
 
@@ -33,4 +34,12 @@ body {
 
 #logged-in button{
   margin-bottom: 50vh;
+}
+
+
+@media only screen and (max-width: 560px) {
+  html {
+    font-size: 0.5em;
+    margin: 0;
+  }
 }

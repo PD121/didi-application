@@ -60,7 +60,7 @@ const BlogDetails = () => {
   };
 
   return (
-    <div>
+    <div className="blog-details-page">
       <div className="btn-wrapper">
         <button className="return-btn" onClick={handleGoBack}>
           返回
